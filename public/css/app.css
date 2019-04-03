@@ -1,0 +1,528 @@
+/* =============================
+    Global styling
+================================ */
+:root {
+    --grey: #f9f9f9;
+    --main-color: #f89f7b;
+    --secondary-color: #586BA4;
+    --overlay: rgba(248, 159, 123, 0.6);
+    --fontcolor: #787977;
+    --titlecolor: #3d3d3d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 60px;
+    min-height: 100vh;
+    font-size: 16px;
+    color: var(--fontcolor);
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.4em;
+}
+
+footer {
+    padding: 20px;
+    background-color: var(--grey);
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+section {
+    padding: 80px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 1.5em;
+    text-transform: uppercase;
+    color: var(--titlecolor);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.2em;
+}
+
+h1 {
+    font-size: 2.5em !important;
+}
+
+h1.entry-title {
+    margin: 0px 0 70px;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    position: relative;
+    padding-bottom: 0.7em;
+}
+
+h3::after {
+    content: "";
+    width: 50px;
+    height: 2px;
+    border-top: 2px solid var(--secondary-color);
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    margin-left: -25px;
+}
+
+p:last-of-type {
+    margin-bottom: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-color);
+    transition: all ease .5s;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+    ;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+hr {
+    margin: 40px 0;
+    color: var(--grey);
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn-primary,
+.wpcf7-submit,
+.blog aside form input[type="submit"],
+.blog #commentform .form-submit #submit {
+    display: inline-block;
+    min-width: 150px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    /* color: #fff; */
+    color: var(--main-color);
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    margin: 10px auto;
+    text-align: center;
+    transition: all ease .5s;
+}
+
+.btn-primary:hover,
+.wpcf7-submit:hover,
+.blog aside form input[type="submit"]:hover,
+.blog #commentform .form-submit #submit:hover {
+    background-color: var(--secondary-color);
+    background-color: var(--main-color);
+    /* border-color: var(--secondary-color); */
+    color: #fff;
+}
+
+ header,
+.page-template-nieuws header {
+    box-shadow: 0 0 5px lightgrey;
+}
+
+.col-max {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.col-max.back {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+aside h4 {
+    margin-bottom: 0px;
+}
+
+.fa-arrow-circle-up {
+    display: none;
+    position: fixed;
+    right: 30px;
+    bottom: 40px;
+    font-size:30px;
+    color: var(--main-color);
+    z-index: 99;
+    cursor: pointer;
+}
+
+
+/* =============================
+    Menu & Hamburger menu
+================================ */
+header {
+    padding: 20px 0;
+}
+
+.nav-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav-wrapper a {
+    color: var(--fontcolor) !important;
+}
+
+.nav-wrapper a:hover {
+    color: var(--main-color) !important;
+}
+
+.second-menu {
+    width: 100%;
+    text-align: right;
+    padding: 0 0 15px;
+    display: none;
+}
+
+.second-menu li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+.second-menu a {
+    padding: 0 0 0 15px;
+}
+
+header .logo {
+    width: 30%;
+}
+
+header img {
+    width: 50px;
+    height: 50px;
+}
+
+header ul.desktop-nav {
+    width: 70%;
+    text-align: right;
+}
+
+header ul.desktop-nav {
+    text-align: right;
+    text-transform: uppercase;
+}
+
+header li:not(:last-of-type) a {
+    padding-right: 20px;
+}
+
+.desktop-nav li {
+    display: none;
+}
+
+.responsive-nav {
+    padding-left: 30px;
+    display: none;
+}
+
+.desktop-nav .toggle-nav {
+    font-size: 25px;
+}
+
+.responsive-nav li {
+    display: block;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+    .second-menu {
+        display: block;
+    }
+    header .logo {
+        width: 7%;
+    }
+    header ul.desktop-nav {
+        width: 93%;
+    }
+    .desktop-nav li {
+        display: inline-block;
+    }
+    .desktop-nav .toggle-nav {
+        display: none;
+    }
+    .responsive-nav {
+        display: none;
+        padding-left: 0;
+    }
+}
+
+/* =============================
+    Admin init
+================================ */
+.admin-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 700px;
+    margin: 20px auto 0;
+}
+
+.admin-buttons .btn-primary {
+    width: 40%;
+    padding: 40px 0;
+    font-size: 1.5em;
+}
+
+.thankyou-wrapper .admin-buttons {
+    margin-top: 60px;
+}
+
+.thankyou-wrapper .admin-buttons .btn-primary {
+    line-height: 1.5em;
+    padding: 40px 10px;
+}
+
+@media (max-width: 767px) {
+    .thankyou-wrapper .admin-buttons .btn-primary {
+        width: 80%;
+    }
+}
+
+/* =============================
+    Admin overview
+================================ */
+.overview-filter form {
+    background-color: var(--grey);
+}
+
+.overview-filter form p {
+    width: 100%;
+    margin: 0;
+    padding-right: 0;
+}
+
+@media (min-width: 768px) {
+    .overview-filter form p {
+        width: 35%;
+        padding-right: 10px;
+    }
+    .overview-filter form p:last-of-type {
+        width: 30%;
+        padding-right: 0;
+        display: flex;
+        align-items: flex-end;  
+    }
+    .overview-filter form p:last-of-type input {
+        margin-bottom: 0;
+    }
+}
+
+.buttons {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.workshop-item {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    border: 1px solid var(--fontcolor);
+    border-radius: 5px;
+    max-width: 700px;
+    margin: 0 auto 20px;
+}
+
+.workshop-item .titel, .workshop-item .locatie, .workshop-item .deelnemers, .workshop-item .beschikbaar, .card .naam, .card .adres, .card .email, .card .tel-nr, .card .btw-nr {
+    width: 100%;
+}
+
+.workshop-item .datum, .workshop-item .uur, .workshop-item .doelgroep, .workshop-item .prijs {
+    width: 50%;
+}
+
+.workshop-item .button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid var(--fontcolor);
+    margin-top: 10px;
+}
+
+.workshop-item p:last-of-type {
+    margin-bottom: 20px;
+}
+
+.workshop-item p span {
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .card .email, .card .tel-nr, .card .btw-nr, .workshop-item .beschikbaar, .workshop-item .deelnemers {
+        width: 50%;
+    }
+}
+
+
+/* =============================
+    Workshops admin detail page
+================================ */
+aside h2 {
+    margin-top: 30px;
+    padding-top: 30px;
+}
+
+
+/* =============================
+    Workshops update page
+================================ */
+form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid var(--fontcolor);
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form > div {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+form label {
+    font-weight: bold;
+    padding: 10px 0;
+    margin-right: 10px;
+    display: block;
+}
+
+form input, form select, form textarea {
+    padding: 10px 20px;
+    flex-grow: 2;
+    font-size: 16px;
+    color: var(--fontcolor);
+    font-family: 'Raleway', sans-serif;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+}
+
+form select {
+    height: 45px;
+}
+
+form textarea {
+    height: 200px;
+}
+
+.error {
+    color: red;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+@media (min-width: 480px) {
+    form > div {
+        width: 50%;
+    }
+    form .titel, form .locatie, form .deelnemers, form .beschrijving {
+        width: 100%;
+    }
+    form .datum, form .doelgroep {
+        padding-right: 10px;
+    }
+    form select {
+        height: 42px;
+    }
+}
+
+/* =============================
+    Frontend page
+================================ */
+p.register {
+    border-top: 1px solid var(--titlecolor);
+    width: 100%;
+    margin-bottom: 0 !important;
+}
+
+p.register .btn-primary {
+    width: 100%;
+}
+
+.filter {
+    margin-bottom: 20px;
+}
+
+
+/* =============================
+    Inschrijven page
+================================ */
+form.inschrijven > div {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    form.inschrijven div.email, form.inschrijven div.tel-nr {
+        width: 50%;
+    }
+    form.inschrijven div.email {
+        padding-right: 10px;
+    }
+}
+
+
+/* =============================
+    Login page
+================================ */
+form.login {
+    max-width: 500px;
+}
+
+form.login p {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+/* =============================
+    Than you page
+================================ */
+.ty-text p {
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+
+.ty-text span {
+    display: inline-block;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
